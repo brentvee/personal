@@ -15,13 +15,19 @@
 	Reviews
 \*____________________________________________________________________________*/
 
+using System.Diagnostics;
+using System.Linq;
+
 namespace GitTest
 {
     public class TestClass
     {
         public void Method1()
         {
-
+            Enumerable.Range(1, 100)
+                .Select(o => string.Format("{0}", o))
+                .ToList()
+                .ForEach(o => Debug.WriteLine(o));
         }
     }
 }
